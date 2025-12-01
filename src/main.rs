@@ -3,22 +3,12 @@ fn main() {
 }
 
 pub fn fizz_buzz(num: i32) -> String {
-    // 3でも5でも割り切れるときはFizzBuzzをかえす
-    if (num % 3 == 0) && (num % 5 == 0) {
-        return "FizzBuzz".to_string();
+    match num {
+        x if (x % 3 == 0) && (x % 5 == 0) => "FizzBuzz".to_string(),
+        x if x % 3 == 0 => "Fizz".to_string(),
+        x if x % 5 == 0 => "Buzz".to_string(),
+        _ => num.to_string(),
     }
-
-    // 3で割り切れるときはFizzを返す
-    if num % 3 == 0 {
-        return "Fizz".to_string();
-    }
-
-    // 5で割り切れるときはBuzzを返す
-    if num % 5 == 0 {
-        return "Buzz".to_string();
-    }
-
-    return num.to_string();
 }
 
 // Fizzbuzz問題
