@@ -12,6 +12,7 @@ pub fn fizz_buzz(_: i32) -> String {
 // 4. 上記以外の数値の場合、渡された数値をそのまま出力する。
 //
 #[cfg(test)]
+#[allow(non_snake_case)]
 mod tests {
     use super::*;
     #[test]
