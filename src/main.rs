@@ -3,10 +3,10 @@ fn main() {
 }
 
 pub fn fizz_buzz(num: i32) -> String {
-    match num {
-        x if (x % 3 == 0) && (x % 5 == 0) => "FizzBuzz".to_string(),
-        x if x % 3 == 0 => "Fizz".to_string(),
-        x if x % 5 == 0 => "Buzz".to_string(),
+    match (num % 3 == 0, num % 5 == 0) {
+        (true, true) => "FizzBuzz".to_string(),
+        (true, false) => "Fizz".to_string(),
+        (false, true) => "Buzz".to_string(),
         _ => num.to_string(),
     }
 }
